@@ -4,16 +4,13 @@ from faker import Faker
 import random
 
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 
-from models import Company, Dev, Freebie
+from models import Company, Dev, Freebie, session
 
 fake = Faker()
 
 if __name__ == '__main__':
-    engine = create_engine('sqlite:///freebies.db')
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    engine = create_engine('sqlite:///:memory:')
 
     import ipdb
     ipdb.set_trace()
